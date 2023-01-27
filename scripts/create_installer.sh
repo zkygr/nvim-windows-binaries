@@ -1,13 +1,13 @@
 #!/bin/bash
 
 GIT_ROOT=$(git rev-parse --show-toplevel)
-OUTPUT_DIR="${GIT_ROOT}/.zip"
+OUTPUT_DIR="${GIT_ROOT}/_installer"
 GITHUB_ROOT_URL="git@github.com:meomeo187"
 
 CONFIG_REPO_NAME="config"
 CONFIG_REPO_URL="${GITHUB_ROOT_URL}/${CONFIG_REPO_NAME}.git"
 
-BINARIES_REPO_NAME="binaries"
+BINARIES_REPO_NAME="nvim_for_windows"
 BINARIES_REPO_URL="${GITHUB_ROOT_URL}/${BINARIES_REPO_NAME}.git"
 
 
@@ -30,7 +30,7 @@ function create_installer_zip(){
     rm -rf "${CONFIG_REPO_NAME}/.git"
     rm -rf "${BINARIES_REPO_NAME}/.git"
 
-    7z a windows_dev_env.7z -- config binaries
+    7z a windows_dev_env.7z -- config nvim_for_windows
 
     popd
 }
