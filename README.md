@@ -1,30 +1,14 @@
 # binaries
 
-## Quick Steps
+## How to update my drv configuration
 
-- install the following applications:
-  - nvim
-  - nodejs
-  - python3
-  - Git
-  - cygwin and activate the following packages:
-    - fzf
-    - make
-    - procps-ng
-    - tree
-    - time
-    - tmux
-- unzip ripgrep
-- expand the path variable with nvim and ripgrep
-- open cygwin and run
-  - `cp -r /cygdrive/c/Users/$USER/.ssh ~`
-  - `git config --global core.autocrlf`
-  - `../config/scripts/convert_to_lf.sh`
-  - `../config/scripts/update.sh`
-
-
-### Cygwin
-
-The following packages are not included in the standard cygwin installation and have been manual selected:
-
+- udpate nvim configuration
+	- see [nvim-drv](https://gitlab.com/kyger/nvim-drv)
+- remove dirs:
+	- `~/AppData/Local/nvim-data`
+	- `~/AppData/Local/coc`
+	- `~/AppData/Local/Programs/Python/Python310/Lib/site-packages`
+- execute [scripts/archive.sh](scripts/archive.sh)
+- zip tarballs and push release
+- extract in drv and have fun :)
 
